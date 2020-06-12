@@ -29,23 +29,27 @@ Class Client extends User
 		echo "Добро пожаловать " .$name. "  " . $surname. " вы вошли как " .$role. " можете просматривать сайт";
 	}
 }
+if (!empty($log)&&!empty($pass))
+{
 if ($log == "admin1" && $pass == "admin123")
 {
-	 $admin = new admin();
-    $admin->welcome_admin("Vasya", "Lobanov", "admin");
+	$admin = new admin();
+	$admin->welcome_admin("Vasya", "Lobanov", "admin");
 }
 else if ($log == "manager1" && $pass == "manager123")
 {
-	 $manager = new manager();
-    $manager->welcome_manager("Gregorii", "Demchenko", "manager");
+	$manager = new manager();
+	$manager->welcome_manager("Gregorii", "Demchenko", "manager");
 }
 else if ($log == "client1" && $pass == "client123")
 {
-	 $client = new client();
-    $client->welcome_client("Arkadii", "Valenkovich", "client");
+	$client = new client();
+	$client->welcome_client("Arkadii", "Valenkovich", "client");
 }
 else {
 	echo "Wrong login or password!";
 }
+}
+else header('Location: index.php');
 
 ?>
