@@ -24,19 +24,22 @@ Class User
 Class Admin extends User 
 {
 
-    public function welcome_admin() {
+    public function welcome() {
+        parent::welcome();
         echo "вы можете вносить правки на сайте";
     }
 }
 Class Manager extends User 
 {
-    public function welcome_manager() {
+    public function welcome() {
+        parent::welcome();
         echo " вы можете добавлять товары на сайт";
     }
 }
 Class Client extends User 
 {
-    public function welcome_client() {
+    public function welcome() {
+        parent::welcome();
         echo " вы можете просматривать сайт";
     }
 }
@@ -45,24 +48,19 @@ if (!empty($log)&&!empty($pass))
 
     if ($log == "admin1" && $pass == "admin123")
     {
-        $user = new user("Vasya", "Lobanov", "admin");
-        $user->welcome();
         $admin = new admin("Vasya", "Lobanov", "admin");
-        $admin->welcome_admin();
+        $admin->welcome();
     }
     else if ($log == "manager1" && $pass == "manager123")
     {
-        $user = new user("Gregorii", "Demchenko", "manager");
-        $user->welcome();
         $manager = new manager("Gregorii", "Demchenko", "manager");
-        $manager->welcome_manager();
+        $manager->welcome();
     }
     else if ($log == "client1" && $pass == "client123")
     {
-        $user = new user("Arkadii", "Valenkovich", "client");
-        $user->welcome();
+
         $client = new client("Arkadii", "Valenkovich", "client");
-        $client->welcome_client();
+        $client->welcome();
     }
     else {
         echo "Wrong login or password!";
