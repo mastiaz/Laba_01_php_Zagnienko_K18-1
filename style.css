@@ -1,0 +1,29 @@
+body
+{
+	text-align: center;
+	background-color: grey;
+}
+.wraper 
+{
+	margin-left: 100px;
+}
+h1 
+{
+	text-align: center;
+}
+input
+{
+	margin-top: 20px;
+	border-color: #FF0000;
+	border:1px solid; 
+}
+.button {
+	width: 170px;
+	height: 40px;
+	margin-top: 30px;
+	border: none;
+	background-color: #00BFFF;
+	text-align: center;
+	color: #ffffff;
+	padding-top: 7px;
+}
